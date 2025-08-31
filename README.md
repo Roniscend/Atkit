@@ -1,4 +1,4 @@
-# OralVis Camera App
+# Atkit Camera App
 
 Professional Android application for oral health imaging with session-based capture, featuring advanced UI/UX design and robust architecture.
 
