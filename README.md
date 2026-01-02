@@ -49,8 +49,4 @@ Professional Android application for oral health imaging with session-based capt
   <img src="https://github.com/user-attachments/assets/8dbc580a-30f8-48c4-b16b-1122ab51d7e2" width="260" />
 </p>
 
-## 🚀 Quick Start
-1. Clone the repository and open it in Android Studio  
-2. Sync the project with Gradle  
-3. Build and run on an Android device (Android 7.0+)  
-4. Grant camera permissions when prompted  
+
