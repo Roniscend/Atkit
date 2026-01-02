@@ -34,7 +34,7 @@ fun HomeScreen(
             TopAppBar(
                 title = {
                     Text(
-                        "OralVis Camera",
+                        "Atkit",
                         fontWeight = FontWeight.Bold
                     )
                 },

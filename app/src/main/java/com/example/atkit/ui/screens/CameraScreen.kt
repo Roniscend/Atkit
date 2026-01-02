@@ -54,7 +54,6 @@ fun CameraScreen(
 
     val cameraExecutor: ExecutorService = remember { Executors.newSingleThreadExecutor() }
 
-    // ✅ Fixed camera provider initialization
     LaunchedEffect(cameraPermissionState.status.isGranted) {
         if (cameraPermissionState.status.isGranted) {
             try {
@@ -110,17 +109,14 @@ fun CameraScreen(
                     .padding(paddingValues)
             ) {
                 if (cameraReady && cameraProvider != null) {
-                    // ✅ Fixed Camera Preview
                     AndroidView(
                         factory = { ctx ->
                             PreviewView(ctx).apply {
-                                // ✅ Critical fixes for black screen
                                 implementationMode = PreviewView.ImplementationMode.COMPATIBLE
                                 scaleType = PreviewView.ScaleType.FILL_CENTER
                             }
                         },
                         update = { previewView ->
-                            // ✅ Setup camera when view updates
                             cameraProvider?.let { provider ->
                                 setupCamera(ctx = context, previewView, lifecycleOwner, provider) { capture ->
                                     imageCapture = capture
@@ -130,7 +126,6 @@ fun CameraScreen(
                         modifier = Modifier.fillMaxSize()
                     )
                 } else {
-                    // ✅ Loading state while camera initializes
                     Box(
                         modifier = Modifier.fillMaxSize(),
                         contentAlignment = Alignment.Center
@@ -145,7 +140,6 @@ fun CameraScreen(
                     }
                 }
 
-                // Camera Controls
                 Row(
                     modifier = Modifier
                         .align(Alignment.BottomCenter)
@@ -160,7 +154,6 @@ fun CameraScreen(
                 ) {
                     Spacer(modifier = Modifier.width(64.dp))
 
-                    // Capture Button
                     Button(
                         onClick = {
                             if (!isCapturing && imageCapture != null) {
@@ -199,7 +192,6 @@ fun CameraScreen(
                         }
                     }
 
-                    // Image count display
                     Card(
                         modifier = Modifier.padding(start = 16.dp),
                         colors = CardDefaults.cardColors(
@@ -217,7 +209,6 @@ fun CameraScreen(
             }
         }
     } else {
-        // Permission not granted
         Column(
             modifier = Modifier
                 .fillMaxSize()
@@ -257,7 +248,6 @@ fun CameraScreen(
     }
 }
 
-// ✅ Updated setupCamera function
 private fun setupCamera(
     ctx: Context,
     previewView: PreviewView,
@@ -266,10 +256,8 @@ private fun setupCamera(
     onImageCaptureReady: (ImageCapture) -> Unit
 ) {
     try {
-        // ✅ Unbind all use cases before rebinding
         cameraProvider.unbindAll()
 
-        // ✅ Create preview with proper configuration
         val preview = Preview.Builder()
             .setTargetAspectRatio(AspectRatio.RATIO_4_3)
             .build()
@@ -277,7 +265,6 @@ private fun setupCamera(
                 it.setSurfaceProvider(previewView.surfaceProvider)
             }
 
-        // ✅ Create image capture with optimized settings
         val imageCapture = ImageCapture.Builder()
             .setTargetAspectRatio(AspectRatio.RATIO_4_3)
             .setCaptureMode(ImageCapture.CAPTURE_MODE_MINIMIZE_LATENCY)
@@ -285,10 +272,8 @@ private fun setupCamera(
 
         onImageCaptureReady(imageCapture)
 
-        // ✅ Select back camera
         val cameraSelector = CameraSelector.DEFAULT_BACK_CAMERA
 
-        // ✅ Bind use cases to camera with error handling
         val camera = cameraProvider.bindToLifecycle(
             lifecycleOwner, cameraSelector, preview, imageCapture
         )

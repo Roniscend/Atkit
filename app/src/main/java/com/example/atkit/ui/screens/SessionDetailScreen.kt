@@ -51,7 +51,6 @@ fun SessionDetailScreen(
     var session by remember { mutableStateOf<SessionEntity?>(null) }
     var images by remember { mutableStateOf<List<File>>(emptyList()) }
     var showDeleteDialog by remember { mutableStateOf(false) }
-    // ✅ Add state for full-screen image preview
     var selectedImage by remember { mutableStateOf<File?>(null) }
 
     LaunchedEffect(sessionId) {
@@ -92,12 +91,10 @@ fun SessionDetailScreen(
                     .padding(paddingValues)
                     .padding(16.dp)
             ) {
-                // Session Info Card
                 Card(
                     modifier = Modifier.fillMaxWidth(),
                     elevation = CardDefaults.cardElevation(defaultElevation = 4.dp),
                     onClick = {
-                        // Regular click functionality (if needed)
                     }
                 ) {
                     Column(
@@ -159,8 +156,6 @@ fun SessionDetailScreen(
                         fontWeight = FontWeight.Bold,
                         modifier = Modifier.padding(bottom = 8.dp)
                     )
-
-                    // ✅ Updated LazyVerticalGrid with clickable images
                     LazyVerticalGrid(
                         columns = GridCells.Fixed(2),
                         horizontalArrangement = Arrangement.spacedBy(8.dp),
@@ -219,7 +214,6 @@ fun SessionDetailScreen(
         }
     }
 
-    // ✅ Full-Screen Image Dialog
     selectedImage?.let { imageFile ->
         FullScreenImageDialog(
             imageFile = imageFile,
@@ -227,7 +221,6 @@ fun SessionDetailScreen(
         )
     }
 
-    // Delete Confirmation Dialog
     if (showDeleteDialog) {
         AlertDialog(
             onDismissRequest = { showDeleteDialog = false },
@@ -293,7 +286,6 @@ fun SessionDetailScreen(
     }
 }
 
-// ✅ Full-Screen Image Dialog with Zoom Functionality
 @Composable
 fun FullScreenImageDialog(
     imageFile: File,
@@ -345,7 +337,6 @@ fun FullScreenImageDialog(
                     )
             )
 
-            // Close button
             IconButton(
                 onClick = onDismiss,
                 modifier = Modifier
@@ -366,7 +357,6 @@ fun FullScreenImageDialog(
     }
 }
 
-// Delete session function
 private fun deleteSession(
     context: android.content.Context,
     sessionViewModel: SessionViewModel,
