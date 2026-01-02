@@ -1,48 +1,56 @@
 # Atkit Camera App
 
-Professional Android application for oral health imaging with session-based capture, featuring advanced UI/UX design and robust architecture.
+Professional Android application for oral health imaging with session-based capture, featuring advanced UI/UX design and a robust modern Android architecture.
 
 ## 🚀 Key Features
-- 📷 **CameraX Integration** - High-quality image capture with optimized camera settings
-- 🗃️ **Session Management** - Organize images by patient sessions with Room database
-- 🔍 **Smart Search** - Fast search functionality by Session ID and patient details
-- 🖼️ **Advanced Image Viewer** - Full-screen viewer with pinch-to-zoom and smooth pan gestures
-- 🗑️ **Secure Deletion** - Safe session removal with confirmation dialogs
-- 🌗 **Adaptive Theming** - **Full light/dark mode support** that automatically adapts to system preferences
-- 🛡️ **Privacy Compliant** - Scoped storage implementation following Android best practices
-- ⚡ **Performance Optimized** - Lazy loading, efficient memory management, and smooth animations
+- 📷 **CameraX Integration** – High-quality image capture with optimized camera settings  
+- 🗃️ **Session Management** – Organize images by patient sessions using Room database  
+- 🔍 **Smart Search** – Fast search by Session ID and patient details  
+- 🖼️ **Advanced Image Viewer** – Full-screen viewer with pinch-to-zoom and smooth pan gestures  
+- 🗑️ **Secure Deletion** – Safe session removal with confirmation dialogs  
+- 🌗 **Adaptive Theming** – Full light/dark mode support adapting to system preferences  
+- 🛡️ **Privacy Compliant** – Scoped storage implementation following Android best practices  
+- ⚡ **Performance Optimized** – Lazy loading, efficient memory management, smooth animations  
 
-## 🛠️ Advanced Tech Stack
-- **Language:** Kotlin with Coroutines
-- **Architecture:** MVVM with Repository pattern
-- **UI:** Jetpack Compose + Material 3 with **dynamic theming**
-- **Database:** Room (SQLite) with KSP code generation
-- **Camera:** CameraX with modern lifecycle-aware components
-- **Navigation:** Navigation Compose with type-safe routing
-- **Image Processing:** Coil with optimized caching
+## 🛠️ Tech Stack
+- **Language:** Kotlin + Coroutines  
+- **Architecture:** MVVM with Repository pattern  
+- **UI:** Jetpack Compose + Material 3 (Dynamic Theming)  
+- **Database:** Room (SQLite) with KSP  
+- **Camera:** CameraX (Lifecycle-aware)  
+- **Navigation:** Navigation Compose  
+- **Image Loading:** Coil (Optimized caching)  
 
-## ✨ UI/UX Highlights
-- **Material 3 Design System** implementation with consistent styling
-- **Responsive layouts** optimized for different screen sizes
-- **Smooth animations** and transitions between screens
-- **Haptic feedback** for enhanced user interaction
-- **Loading states** and error handling with user-friendly messages
-- **Accessibility support** with proper content descriptions
+## ✨ UI / UX Highlights
+- Material 3 design system  
+- Responsive layouts for different screen sizes  
+- Smooth transitions and animations  
+- Haptic feedback for better interaction  
+- Graceful loading and error states  
+- Accessibility-friendly UI  
 
-## 🎯 Professional Features
-- **Automatic image counting** during capture sessions
-- **Timestamp-based file naming** for organized storage
-- **Gesture-driven navigation** with intuitive user flows
-- **Real-time session updates** with reactive UI
-- **Optimized image compression** for efficient storage
-- **Background processing** for non-blocking operations
+## 🎯 Functional Highlights
+- Automatic image counting per session  
+- Timestamp-based image naming  
+- Gesture-driven navigation  
+- Real-time reactive UI updates  
+- Optimized image compression  
+- Background processing for heavy tasks  
+
+## 📸 App Screenshots
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/e5f5089d-0f5d-4f7f-b77b-35750f605593" width="260" />
+  <img src="https://github.com/user-attachments/assets/935befdf-c325-4284-b556-8ee0c913e96f" width="260" />
+</p>
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/0770bb60-214c-482c-9234-302d64394c89" width="260" />
+  <img src="https://github.com/user-attachments/assets/8dbc580a-30f8-48c4-b16b-1122ab51d7e2" width="260" />
+</p>
 
 ## 🚀 Quick Start
-1. Clone repository and open in Android Studio
-2. Sync project with Gradle files
-3. Build and run on device (Android 7.0+)
-4. Grant camera permissions when prompted
-![IMG-20250830-WA0008](https://github.com/user-attachments/assets/e5f5089d-0f5d-4f7f-b77b-35750f605593)
-![IMG-20250830-WA0007](https://github.com/user-attachments/assets/935befdf-c325-4284-b556-8ee0c913e96f)
-![IMG-20250830-WA0006](https://github.com/user-attachments/assets/0770bb60-214c-482c-9234-302d64394c89)
-![IMG-20250830-WA0005](https://github.com/user-attachments/assets/8dbc580a-30f8-48c4-b16b-1122ab51d7e2)
+1. Clone the repository and open it in Android Studio  
+2. Sync the project with Gradle  
+3. Build and run on an Android device (Android 7.0+)  
+4. Grant camera permissions when prompted  
